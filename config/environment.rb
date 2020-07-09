@@ -1,6 +1,8 @@
-require "cli_project_beer/version"
+require 'bundler/setup'
+require 'dotenv/load'
+Bundler.require 
 
-module cli_project_beer
-
-    
-end 
+require_relative "../lib/version"
+require_relative "../lib/model/beer.rb"
+require_relative "../lib/services/api.rb"
+require_relative "../lib/services/cli.rb"

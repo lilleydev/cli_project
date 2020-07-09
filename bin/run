@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
 
-puts "Hello World"
+require_relative '../config/environment'
+
+BeerAPI.new.get_beer 
+CLI.new.run
 

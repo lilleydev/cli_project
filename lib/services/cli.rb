@@ -3,7 +3,7 @@
 class CLI 
 
   def run 
-    puts "it's working"
+    puts Rainbow("it's working").beige
   end 
 
 end 

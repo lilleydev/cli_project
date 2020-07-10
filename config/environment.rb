@@ -1,6 +1,7 @@
-require 'bundler/setup'
-#require 'dotenv/load'
-#Bundler.require 
+require "HTTParty"
+require "pry"
+require "colorize"
+require "rainbow"
 
 
 #require_relative "../lib/version"

@@ -8,8 +8,6 @@ class Beer
     @brewers_tips = brewers_tips
     @food_pairing = food_pairing
     @description = description
-    #@hops = hops
-    #@malt = malt
     @abv = abv
     @@all << self
   end 
@@ -48,9 +46,14 @@ class Beer
     end
   end 
 
+  def self.beer_foods
+    all.map do |beer_instance|
+    beer_instance.food_pairing
+    end 
+   
+  end
 
-
-def self.pick_description
+  def self.pick_description
     beer_list
     puts ""
     puts Rainbow("** Type the number you want to see more on **").springgreen.italic

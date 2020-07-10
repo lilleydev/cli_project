@@ -28,6 +28,10 @@ class CLI
         Beer.random_beer
       when "b"
         Beer.beer_list
+      when "d"
+        Beer.pick_description
+      when "f"
+        puts Beer.beer_foods
       else 
         puts "Invalid entry, try again"
       end 
@@ -39,8 +43,14 @@ class CLI
     puts ""
     puts Rainbow("Hit 'Y' for Brewer's Pick").darkturquoise
     puts ""
+    puts Rainbow("   Hit 'B' to check out the entire selection").mediumturquoise
     puts ""
-    puts Rainbow("Hit 'B' to check out the entire selection").mediumturquoise
+    puts Rainbow("      Hit 'D' to get a brew description").turquoise
+    puts ""
+    puts Rainbow("   Hit 'F' for the full menu").paleturquoise
+    puts ""
+    puts Rainbow("Uber here? 'Q' to exit").turquoise
+
     get_input
   end 
 

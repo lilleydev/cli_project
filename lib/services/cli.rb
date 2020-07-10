@@ -11,7 +11,8 @@ class CLI
   def run 
     welcome
     #sleep (1)
-    
+    main_menu
+
   end 
 
   def welcome
@@ -28,6 +29,7 @@ class CLI
       else 
         puts "Invalid entry, try again"
       end 
+      prompts 
     end 
   end 
 
@@ -35,5 +37,10 @@ class CLI
     puts ""
     puts "Hit 'Y' for Brewer's Pick"
     puts ""
+    get_input
+  end 
+
+  def get_input
+    self.input = gets.chomp
   end 
 end 

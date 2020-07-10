@@ -18,11 +18,11 @@ class Beer
     @@all 
   end
 
-#   def self.beers 
-#     all.map do |beer_instance|
-#       beer_instance.name
-#     end 
-#   end 
+  def self.beers 
+    all.map do |beer_instance|
+      beer_instance.name
+    end 
+  end 
 
 #   def self.beer_description
 #     all.map do |beer_instance|
@@ -30,12 +30,11 @@ class Beer
 #     end 
 #   end 
 
-#   def self.random_beer
-#     #rando = beers.sample
-#     puts ""
-#     puts Rainbow("Try this! #{beers.sample}").teal
-#     puts ""
-#   end
+  def self.random_beer
+    puts ""
+    puts Rainbow("Try this! #{beers.sample}").teal
+    puts ""
+  end
 
 #   def self.beer_list 
 #     beers.each.with_index(1) do |beer, x|

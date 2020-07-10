@@ -26,6 +26,8 @@ class CLI
       case input.downcase 
       when "y"
         Beer.random_beer
+      when "b"
+        Beer.beer_list
       else 
         puts "Invalid entry, try again"
       end 
@@ -35,8 +37,10 @@ class CLI
 
   def prompts 
     puts ""
-    puts "Hit 'Y' for Brewer's Pick"
+    puts Rainbow("Hit 'Y' for Brewer's Pick").darkturquoise
     puts ""
+    puts ""
+    puts Rainbow("Hit 'B' to check out the entire selection").mediumturquoise
     get_input
   end 
 

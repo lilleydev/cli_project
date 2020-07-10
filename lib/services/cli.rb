@@ -2,4 +2,8 @@
 
 class CLI 
 
+  def run 
+    puts "it's working"
+  end 
+
 end 

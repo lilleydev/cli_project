@@ -47,7 +47,7 @@ class CLI
     puts ""
     puts Rainbow("      Hit 'D' to get a brew description").turquoise
     puts ""
-    puts Rainbow("   Hit 'F' for the full menu").paleturquoise
+    puts Rainbow("   Hit 'F' for the full food menu").paleturquoise
     puts ""
     puts Rainbow("Uber here? 'Q' to exit").turquoise
 

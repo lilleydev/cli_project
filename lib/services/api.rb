@@ -7,7 +7,7 @@ class BeerAPI
         beer_info = HTTParty.get(BASE_URL)
 
         beer_info.each do |beer_info_hash|
-            #binding.pry
+            
             Beer.new(beer_info_hash["name"], beer_info_hash["food_pairing"], beer_info_hash["description"], beer_info_hash["brewers_tips"], beer_info_hash["abv"])
             
         end 

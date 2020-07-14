@@ -16,8 +16,9 @@ class CLI
   end 
 
   def welcome
-    puts "Welcome to Brewdogs' Assistant!".black.on_green
-    puts "Let's Party!".black.on_green
+    puts ""
+    puts "       Welcome to Brewdogs' Assistant!     ".black.on_green
+    puts "                Let's Party!               ".black.on_green
     puts "  "
   end 
 
@@ -41,16 +42,18 @@ class CLI
   end 
 
   def prompts 
+    puts Rainbow("_____________________________________________________").skyblue
     puts ""
-    puts Rainbow("Hit 'Y' for Brewer's Pick").darkturquoise
+    puts Rainbow("            Hit 'Y' for Brewer's Pick").darkturquoise
     puts ""
-    puts Rainbow("   Hit 'B' to check out the entire selection").mediumturquoise
+    puts Rainbow("      Hit 'B' to check out the entire selection").mediumturquoise
     puts ""
-    puts Rainbow("      Hit 'D' to get a brew description").turquoise
+    puts Rainbow("         Hit 'D' to get a brew description").turquoise
     puts ""
-    puts Rainbow("   Hit 'T' if you're looking for sweets").paleturquoise
+    puts Rainbow("        Hit 'T' if you're looking for sweets").paleturquoise
     puts ""
-    puts Rainbow("Uber here? 'Q' to exit").turquoise
+    puts Rainbow("            Uber here? 'Q' to exit").turquoise
+    puts Rainbow("_____________________________________________________").skyblue
 
     get_input
   end 

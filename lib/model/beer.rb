@@ -53,11 +53,7 @@ class Beer
     end 
   end
 
-  def self.foods_selection
-    all.each.with_index(1) do |beer_instance, index|
-    puts "#{index}. #{beer_instance.food_pairing}"
-    end 
-  end
+  
 
   def self.desserts
     foods_flat = []
@@ -96,9 +92,10 @@ class Beer
     puts Rainbow("** Hit 'y' if you want to see what goes great with that. **").palevioletred.italic
     food = gets.chomp 
     if food.downcase == "y"
-        puts ""
-        puts beer_foods[num]
-        puts ""
+      puts Rainbow("__________________________________________").lavender
+      puts ""
+      puts beer_foods[num]
+      puts Rainbow("__________________________________________").lavender
     else 
         "Invalid Input"
     end 

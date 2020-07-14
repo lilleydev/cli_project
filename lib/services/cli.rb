@@ -10,6 +10,7 @@ class CLI
 
   def run 
     welcome
+    age_check
     sleep (1)
     main_menu
 
@@ -61,4 +62,21 @@ class CLI
   def get_input
     self.input = gets.chomp
   end 
+
+  def age_check
+    puts "Please enter your age:"
+    age = gets.chomp.to_i
+    
+    if age >= 21 and age < 130
+        puts "you're good"
+    elsif age < 21 and age > 0
+        puts "You can check out these instead:"
+        puts ""
+         Beer.beer_desserts 
+         exit 
+    else 
+        puts "invalid input"
+    end  
+  end 
+
 end 

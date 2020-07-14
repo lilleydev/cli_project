@@ -68,14 +68,19 @@ class CLI
     age = gets.chomp.to_i
     
     if age >= 21 and age < 130
-        puts "you're good"
+      puts ""
+      puts Rainbow("Party on!").aqua
     elsif age < 21 and age > 0
-        puts "You can check out these instead:"
-        puts ""
-         Beer.beer_desserts 
-         exit 
+      puts ""
+      puts Rainbow("You can check out these instead:").aqua
+      puts ""
+      Beer.desserts 
+      exit 
     else 
-        puts "invalid input"
+      puts ""
+      puts Rainbow("Invalid Input").red
+      puts ""
+      age_check
     end  
   end 
 

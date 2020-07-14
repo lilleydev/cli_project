@@ -10,7 +10,7 @@ class CLI
 
   def run 
     welcome
-    #sleep (1)
+    sleep (1)
     main_menu
 
   end 
@@ -18,6 +18,7 @@ class CLI
   def welcome
     puts "Welcome to Brewdogs' Assistant!".black.on_green
     puts "Let's Party!".black.on_green
+    puts "  "
   end 
 
   def main_menu
@@ -30,8 +31,8 @@ class CLI
         Beer.beer_list
       when "d"
         Beer.pick_description
-      when "f"
-        puts Beer.beer_foods
+      when "t"
+        Beer.desserts
       else 
         puts "Invalid entry, try again"
       end 
@@ -47,7 +48,7 @@ class CLI
     puts ""
     puts Rainbow("      Hit 'D' to get a brew description").turquoise
     puts ""
-    puts Rainbow("   Hit 'F' for the full food menu").paleturquoise
+    puts Rainbow("   Hit 'T' if you're looking for sweets").paleturquoise
     puts ""
     puts Rainbow("Uber here? 'Q' to exit").turquoise
 

@@ -35,9 +35,10 @@ class Beer
   end 
 
   def self.random_beer
+    puts Rainbow("__________________________________________").mediumorchid
     puts ""
     puts Rainbow("Try this! #{beers.sample}").teal
-    puts ""
+    puts Rainbow("__________________________________________").mediumorchid
   end
 
   def self.beer_list 
@@ -50,8 +51,36 @@ class Beer
     all.map do |beer_instance|
     beer_instance.food_pairing
     end 
-   
   end
+
+  def self.foods_selection
+    all.each.with_index(1) do |beer_instance, index|
+    puts "#{index}. #{beer_instance.food_pairing}"
+    end 
+  end
+
+  def self.desserts
+    foods_flat = []
+        all.each do |beer_instance|
+          foods_flat << beer_instance.food_pairing
+        end 
+       all_foods = []
+       all_foods = foods_flat.flatten 
+     desserts = []
+     desserts = all_foods.grep(/cake|brownie|brittle|chocolate|brittle|ice cream|tart|pie/)
+     actual_desserts = []
+     actual_desserts = desserts.delete_if {|option| option.include?("crab")}
+     puts "Here are some sweet treats"  
+     puts "" 
+     actual_desserts.each.with_index(1) do |dessert, index|
+            
+            puts "#{index}. #{dessert}"
+            puts ""
+        end 
+  end 
+
+
+
 
   def self.pick_description
     beer_list

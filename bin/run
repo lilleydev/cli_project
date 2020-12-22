@@ -3,5 +3,4 @@
 require_relative '../config/environment'
 
 BeerAPI.new.get_beer 
-
 CLI.new.run

@@ -2,11 +2,19 @@ class Beer
   attr_accessor :name, :food_pairing, :description, :brewers_tips, :abv
 
   @@all = []
-
+  @@desserts = []
+  @@entres = []
   def initialize(name, food_pairing, description, brewers_tips, abv)
     @name = name
     @brewers_tips = brewers_tips
     @food_pairing = food_pairing
+    food_pairing.each do |food|
+      if food.match?(/cake\b|brownie|brittle|chocolate|brittle|ice cream|tart|pie/)
+        @@desserts << food
+      else
+        @@entres << food
+      end
+    end
     @description = description
     @abv = abv
     @@all << self
@@ -27,6 +35,16 @@ class Beer
       beer_instance.abv
     end 
   end 
+  
+  def self.abv_sorter
+    x = 6 
+    all.select do |beer_instance|
+      beer_instance.abv > x
+      
+    end 
+    # we want to see all beers over 6% 
+  end 
+
 
   def self.beer_description
     all.map do |beer_instance|
@@ -56,26 +74,14 @@ class Beer
   
 
   def self.desserts
-    foods_flat = []
-        all.each do |beer_instance|
-          foods_flat << beer_instance.food_pairing
-        end 
-       all_foods = []
-       all_foods = foods_flat.flatten 
-     desserts = []
-     desserts = all_foods.grep(/cake|brownie|brittle|chocolate|brittle|ice cream|tart|pie/)
-     actual_desserts = []
-     actual_desserts = desserts.delete_if {|option| option.include?("crab")}
-     puts "Here are some sweet treats"  
-     puts "" 
-     actual_desserts.each.with_index(1) do |dessert, index|
-            
-            puts "#{index}. #{dessert}"
-            puts ""
-        end 
-  end 
+     
+    "Here are some sweet treats\n" + @@desserts.map.with_index(1) do |dessert, index|
+      "#{index}. #{dessert}\n"
+    end.join('')
 
+  end
 
+#heredoc
 
 
   def self.pick_description

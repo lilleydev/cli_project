@@ -15,7 +15,7 @@ class CLI
     main_menu
 
   end 
-
+ 
   def welcome
     puts ""
     puts "       Welcome to Brewdogs' Assistant!     ".black.on_green
@@ -34,7 +34,7 @@ class CLI
       when "d"
         Beer.pick_description
       when "t"
-        Beer.desserts
+        puts Beer.desserts
       else 
         puts "Invalid entry, try again"
       end 
@@ -74,7 +74,7 @@ class CLI
       puts ""
       puts Rainbow("You can check out these instead:").aqua
       puts ""
-      Beer.desserts 
+      puts Beer.desserts 
       exit 
     else 
       puts ""
